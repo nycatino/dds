@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-start mb-3">
+    <button (click)="volver()" class="btn btn-outline-secondary">
+      <i class="fas fa-arrow-left"></i> Volver
+    </button>
+  </div>
+
+  <h2 class="text-center mb-4">Alumnos</h2>
+
+  <ul class="list-group">
+    <li *ngFor="let alumno of alumnos" class="list-group-item">
+      <p><strong>Nombre:</strong> {{ alumno.nombre }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ alumno.fechaNacimiento | date }}</p>
+
+      <div>
+        <button (click)="editarAlumno(alumno.id)" class="btn btn-warning btn-sm">Editar</button>
+        <button (click)="eliminarAlumno(alumno.id)" class="btn btn-danger btn-sm">Eliminar</button>
+      </div>
+    </li>
+  </ul>
+
+  <button (click)="nuevoAlumno()" class="btn btn-success mt-3">Agregar Alumno</button>
+</div>

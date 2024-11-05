@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<form [formGroup]="editarDocenteForm" (ngSubmit)="guardar()" class="p-4 border rounded bg-light">
+  <h3 class="mb-4">Editar Docente</h3>
+  <div class="d-flex justify-content-start mb-3">
+    <button (click)="volver()" class="btn btn-outline-secondary">
+      <i class="fas fa-arrow-left"></i> Volver
+    </button>
+  </div>
+
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" formControlName="nombre" id="nombre" class="form-control" [value]="docente?.nombre" />
+  </div>
+
+  <div class="mb-3">
+    <label for="legajo" class="form-label">Legajo</label>
+    <input type="number" formControlName="legajo" id="legajo" class="form-control" [value]="docente?.legajo" />
+  </div>
+
+  <button type="submit" class="btn btn-primary w-100">Guardar</button>
+</form>
